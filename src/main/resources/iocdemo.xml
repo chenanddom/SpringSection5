@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
-<bean id="person" class="com.flexible.beans.Person">
-	<property name="userName"><value>zhangsan</value></property>
-	<property name="userAge"><value>20</value></property>
-</bean>
+    <bean id="person" class="com.flexible.beans.Person">
+        <property name="userName">
+            <value>zhangsan</value>
+        </property>
+        <property name="userAge">
+            <value>20</value>
+        </property>
+    </bean>
 
-	<bean id="p2" class="com.flexible.beans.Person">
-		<constructor-arg type="java.lang.String"><value>zhangsan</value></constructor-arg>
-		<constructor-arg type="java.lang.Integer"><value>28</value></constructor-arg>
-	</bean>
+    <bean id="p2" class="com.flexible.beans.Person">
+        <constructor-arg type="java.lang.String">
+            <value>zhangsan</value>
+        </constructor-arg>
+        <constructor-arg type="java.lang.Integer">
+            <value>28</value>
+        </constructor-arg>
+    </bean>
+    <bean id="factory" class="com.flexible.factorymethod.NonStaticFactoryMethod"></bean>
+    <bean id="p3" factory-bean="factory" factory-method="createPerson"></bean>
 
+    <bean id="p4" class="com.flexible.factorymethod.StaticMethod" factory-method="createPerson"></bean>
 </beans>

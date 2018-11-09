@@ -25,4 +25,16 @@
     <bean id="p3" factory-bean="factory" factory-method="createPerson"></bean>
 
     <bean id="p4" class="com.flexible.factorymethod.StaticMethod" factory-method="createPerson"></bean>
+
+    <bean id="p5" class="com.flexible.beans.Person">
+        <property name="userName" value="wangwu"></property>
+        <property name="userAge" value="20"></property>
+    </bean>
+    <bean id="h1" class="com.flexible.beans.House">
+        <property name="length" value="100"></property>
+        <property name="width" value="80"></property>
+        <property name="height" value="60"></property>
+        <property name="person"><ref bean="p5"></ref></property>
+    </bean>
+
 </beans>

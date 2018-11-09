@@ -1,4 +1,4 @@
-package com.flexible.attributeinject;
+package com.flexible.inject.constructorinject;
 
 import com.flexible.beans.Person;
 import org.springframework.context.ApplicationContext;
@@ -9,12 +9,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Description:
  * User: chendom
  * Date: 2018-11-08
- * Time: 12:43
+ * Time: 13:48
  */
-public class AttributeInject {
+public class ConstructorInject {
+
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:iocdemo.xml");
-        Person person = (Person) ctx.getBean("person");
+        Person person = (Person) ctx.getBean("p2");
         System.out.println(person.toString());
     }
 }

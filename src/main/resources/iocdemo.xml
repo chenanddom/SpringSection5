@@ -37,4 +37,79 @@
         <property name="person"><ref bean="p5"></ref></property>
     </bean>
 
+    <bean id="car" class="com.flexible.beans.Car">
+        <property name="person.userName" value="zhaoliu"></property>
+        <property name="person.userAge" value="20"></property>
+    </bean>
+
+    <bean id="favorities" class="com.flexible.beans.Favorite">
+        <property name="favoties">
+            <list>
+                <value>游泳</value>
+                <value>足球</value>
+                <value>篮球</value>
+                <value>棒球</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry>
+                    <key><value>k1</value></key>
+                    <value>运动</value>
+                </entry>
+                <entry>
+                    <key><value>k2</value></key>
+                    <value>上班</value>
+                </entry>
+                <entry>
+                    <key><value>k3</value></key>
+                    <value>约会</value>
+                </entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="k1">value1</prop>
+                <prop key="k2">value2</prop>
+                <prop key="k3">value3</prop>
+            </props>
+        </property>
+    </bean>
+    <!--集合的合并-->
+    <bean id="childFavorities" parent="favorities">
+        <property name="favoties">
+            <list merge="true">
+                <value>赛车</value>
+            </list>
+        </property>
+        <property name="map">
+            <map merge="true">
+                <entry>
+                    <key><value>k12</value></key>
+                    <value>运动2</value>
+                </entry>
+                <entry>
+                    <key><value>k22</value></key>
+                    <value>上班2</value>
+                </entry>
+                <entry>
+                    <key><value>k32</value></key>
+                    <value>约会2</value>
+                </entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props merge="true">
+                <prop key="k12">value12</prop>
+                <prop key="k22">value22</prop>
+                <prop key="k32">value32</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="boss1" class="com.flexible.inject.methodreplace.Boss">
+        <replaced-method name="getHouse" replacer="boss2"></replaced-method>
+    </bean>
+    <bean id="boss2" class="com.flexible.inject.methodreplace.Boss2"></bean>
+
 </beans>

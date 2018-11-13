@@ -1,16 +1,15 @@
-package com.flexible.factorymethod;
+package com.flexible.relationbetweenbean;
 
-import com.flexible.beans.Person;
+import com.flexible.beans.Parent;
+import com.flexible.inject.methodreplace.Boss;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class FactoryMethodDemo {
+public class RelationBean {
 
     public static void main(String[] args) {
-        //非静态的方式
         ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:iocdemo.xml");
-        Person person = (Person) ctx.getBean("p3");
-        System.out.println(person.toString());
-
+        Parent parent = (Parent) ctx.getBean("child");
+        System.out.println(parent.toString());
     }
 }

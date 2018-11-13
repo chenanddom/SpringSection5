@@ -5,4 +5,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
+
+
+    <bean id="hoursebean" class="com.flexible.beans.HouseFactoryBean">
+        <property name="person">
+            <bean id="personp" class="com.flexible.beans.Person">
+                <property name="userAge" value="20"></property>
+                <property name="userName" value="zhouqi"></property>
+            </bean>
+        </property>
+    </bean>
+
+
 </beans>

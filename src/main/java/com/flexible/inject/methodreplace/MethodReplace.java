@@ -1,5 +1,8 @@
 package com.flexible.inject.methodreplace;
 
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.config.CustomScopeConfigurer;
+import org.springframework.beans.factory.config.Scope;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -16,5 +19,8 @@ public class MethodReplace {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:iocdemo.xml");
         Boss boss = (Boss) ctx.getBean("boss1");
         System.out.println(boss.getHouse());
+//        Scope
+//        CustomScopeConfigurer
+//        FactoryBean
     }
 }

@@ -3,4 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <!--负责启动Spring容器的监听器，他将引用上面的上下文件参数获取Spring配置文件的地址-->
+    <!--该监听器在web容器启动时自动运行，它会根据contextConfigLocation
+    Web容器参数获取Spring配置文件，并且启动Spring容器。-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!--需要三大web容器作用域时需要这个配置-->
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+
 </web-app>

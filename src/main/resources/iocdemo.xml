@@ -10,7 +10,7 @@
     <!--开启注解扫描-->
     <!--<context:component-scan base-package="com.flexible" resource-pattern="xx/*.class"></context:component-scan>-->
     <context:component-scan base-package="com.flexible">
-        <context:include-filter type="aspectj" expression="com.flexible..*Controller+"></context:include-filter>
+        <!--<context:include-filter type="aspectj" expression="com.flexible..*Controller+"></context:include-filter>-->
     </context:component-scan>
 <import resource="classpath:iocdemo2.xml"></import>
 

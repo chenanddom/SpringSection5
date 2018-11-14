@@ -2,6 +2,8 @@ package com.flexible.beans;
 
 import org.springframework.beans.factory.FactoryBean;
 
+import javax.annotation.PostConstruct;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -46,4 +48,8 @@ public class HouseFactoryBean implements FactoryBean<House> {
                 "person=" + person +
                 '}';
     }
+/*    @PostConstruct
+    public void printInfo(){
+        System.out.println("Hello world");
+    }*/
 }

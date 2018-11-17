@@ -16,5 +16,12 @@
         </property>
     </bean>
 
+<bean id="penBox" class="com.flexible.beans.PenBox">
+    <property name="markName" value="xxx"></property>
+    <property name="description" value="description"></property>
+</bean>
+
+
+
 
 </beans>
